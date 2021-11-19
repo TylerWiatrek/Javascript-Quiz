@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #228b22;
+    --secondary-color: #0bda51;
+}
+
+header {
+    font-weight: bold;
+    font-size: 20px;
+    display: inline;
+    margin: 0;
+}
+
+header h3 {
+    position: relative;
+    top: 50px;
+}
+
+.highScoreText {
+    left: 50px;
+    position: absolute;
+    color: var(--primary-color);
+    
+   
+}
+
+.timeLeft {
+    float: right;
+    position: absolute;
+    left: 1650px;
+}
+
+
+.quizTitle {
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    font-weight: bold;
+    top: 250px;
+    
+   
+}
+
+.quizText {
+    position: relative;
+    font-size: 24px;
+    text-align: center;
+    bottom: 80px;
+    margin: 20%;  
+   
+}
+
+.button {
+    position: relative;
+    text-align: center;
+    bottom: 430px;
+    
+}
+
+.buttonStart {
+    font-size: 24px;
+}
