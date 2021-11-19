@@ -2,7 +2,6 @@ var startQuizButton = document.querySelector("#start-quiz");
 
 function startQuiz (event) {
     event.preventDefault();
-    
 
 var questions = [
     {
@@ -47,5 +46,7 @@ var questions = [
 ];
 
 }
+ console.log("hello, quiz has started");
+
 //need to insert function here
-startQuizButton.addEventListener("click");
+startQuizButton.addEventListener("click", startQuiz);
