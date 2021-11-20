@@ -2,6 +2,8 @@ var startQuizButton = document.querySelector("#start-quiz");
 var questionsEl = document.getElementById("questions-main");
 var currentQuestionIndex = 0;
 var choicesEl = document.getElementById("questions-choices");
+var scoreEl = document.getElementById("final-score");
+
 
 
 var questions = [
@@ -85,29 +87,43 @@ function getQuestions() {
     titleEl.textContent = currentQuestion.question;
     choicesEl.innerHTML = "";
 
-    for (var i = 0;i < currentQuestion.choices.length; i++) {
+    for (var i = 0; i < currentQuestion.choices.length; i++) {
         var choicesButton = document.createElement("button");
         choicesButton.setAttribute("class", "choicesButton");
         choicesButton.setAttribute("value", currentQuestion.choices[i]);
-        choicesButton.textContent = i+1+": " + currentQuestion.choices[i];
-        choicesButton.onclick = questionClick();
+        choicesButton.textContent = i+1+ ": " + currentQuestion.choices[i];
         choicesEl.appendChild(choicesButton);
-
-
-
+        choicesButton.addEventListener("click", questionClick);
     }
+
+    //currentQuestion.choices.forEach(function(choices, i) {
+    // for (var i = 0;i < currentQuestion.choices.length; i++) {
+    //     var choicesButton = document.createElement("button");
+    //     choicesButton.setAttribute("class", "choicesButton");
+    //     choicesButton.setAttribute("value", currentQuestion.choices[i]);
+    //     choicesButton.textContent = i+1+": " + currentQuestion.choices[i];
+    //     choicesButton.onclick = questionClick();
+    //     choicesEl.appendChild(choicesButton);
+   // }
 
 }
 
 function questionClick() {
-    currentQuestionIndex++;
+    currentQuestionIndex++
     getQuestions();
 
 
 }
 
+function checkAnswers() {
+    
+    
+}
 
- console.log("hello, quiz has started");
+
+
+
+ //console.log("hello, quiz has started");
 
 //need to insert function here
 startQuizButton.addEventListener("click", startQuiz);

@@ -31,7 +31,7 @@ header h3 {
 .timeLeft {
     float: right;
     position: absolute;
-    left: 1630px;
+    left: 1300px;
 }
 
 
@@ -49,7 +49,7 @@ header h3 {
     position: relative;
     font-size: 24px;
     text-align: center;
-    bottom: 80px;
+    bottom: 30px;
     margin: 20%;  
    
 }
@@ -57,7 +57,7 @@ header h3 {
 .button {
     position: relative;
     text-align: center;
-    bottom: 430px;
+    bottom: 300px;
    
     
 }
@@ -70,4 +70,26 @@ header h3 {
 
 .hide {
     display: none;
+}
+
+#questions-main {
+    text-align: center;
+}
+
+#questions-title {
+    text-align: center;
+    font-size: 36px;
+    color: var(--primary-color);
+
+}
+
+#questions-choices {
+    text-align: center;
+    font-size: 24px;
+    color: var(--secondary-color);
+}
+
+#questions-choices button {
+    color: (--secondary-color);
+    
 }
