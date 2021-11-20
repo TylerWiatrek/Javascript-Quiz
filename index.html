@@ -16,17 +16,41 @@
 
 
 
-    <div class="quizIntro">
-        <h1 class="quizTitle">Welcome to the Javascript Quiz Challenge!</h1>
-        <p class="quizText">
+    <div class="quizIntro" id="quiz-main">
+        <h1 class="quizTitle" id="quiz-title">Welcome to the Javascript Quiz Challenge!</h1>
+        <p class="quizText" id="quiz-page">
             Try completing the following quiz challenge. You will be presented with a series of questions regarding Javascript.
             Please keep in mind, the quiz is timed. Answering a question wrong will subtract time. Try your best and try to beat the high score!
         </p>
+        <div class="button">
+            <button class="buttonStart" id="start-quiz" type="submit">Start Quiz</button>
+        </div>
+    </div>
+    
+    <div class="hide" id="questions-main">
+        
+        <div id="questions-title">
+
+        </div>
+        
+        <div id="questions-choices">
+
+        </div>
+
     </div>
 
-    <div class="button">
-        <button class="buttonStart" id="start-quiz" type="submit">Start Quiz</button>
+    <div class="hide" id="end-quiz">
+       <h2>
+
+       </h2>
+        <p>
+            Your final score is <span id="final-score">               </span>
+        </p>
+        <input>
+
     </div>
+
+    
 
 
     <script src="./script.js"></script>

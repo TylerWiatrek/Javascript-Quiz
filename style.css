@@ -67,3 +67,7 @@ header h3 {
     background-color: var(--secondary-color);
     padding: 10px 10px 10px 10px;
 }
+
+.hide {
+    display: none;
+}
