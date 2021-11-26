@@ -71,6 +71,9 @@ var questions = [
 
 ];
 
+var countdownTimer = 60;
+var timeLeftCountdown = document.getElementById("timeLeft");
+
 
 function startQuiz (event) {
     event.preventDefault();
@@ -83,6 +86,28 @@ function startQuiz (event) {
 }
 
 function getQuestions() {
+
+    // var timeRemaining = setInterval(() => { 
+    //     //var countdownTimer = 60;
+    //     if (countdownTimer >= 1) {
+    //         countdownTimer = countdownTimer - 1;
+    //         timeLeftCountdown.textContent = countdownTimer;
+    //         //console.log(countdownTimer);
+    //     }
+    //     else {
+    //         clearInterval(timeRemaining);
+    //         var endScreenEl = document.getElementById("end-quiz")
+    //         var endScreenTimer = document.getElementById("final-score-timer")
+    //         endScreenTimer.textContent = "Sorry, but time has run out!"
+    //         endScreenEl.setAttribute("class", "show");
+    //         questionsEl.setAttribute("class", "hide");
+    //         var endScore = document.getElementById("final-score")
+    //         endScore.textContent = scoreEl;
+    //     };
+        
+    
+    // }, 1000)
+
     var currentQuestion = questions[currentQuestionIndex];
     var titleEl = document.getElementById("questions-title");
     titleEl.textContent = currentQuestion.question;
@@ -106,6 +131,27 @@ function getQuestions() {
 
     
     }
+
+    var timeRemaining = setInterval(() => { 
+        //var countdownTimer = 60;
+        if (countdownTimer >= 1) {
+            countdownTimer = countdownTimer - 1;
+            timeLeftCountdown.textContent = countdownTimer;
+            //console.log(countdownTimer);
+        }
+        else {
+            clearInterval(timeRemaining);
+            var endScreenEl = document.getElementById("end-quiz")
+            var endScreenTimer = document.getElementById("final-score-timer")
+            endScreenTimer.textContent = "Sorry, but time has run out!"
+            endScreenEl.setAttribute("class", "show");
+            questionsEl.setAttribute("class", "hide");
+            var endScore = document.getElementById("final-score")
+            endScore.textContent = scoreEl;
+        };
+        
+    
+    }, 1000)
 }
 
 
@@ -151,6 +197,29 @@ function questionClick() {
     
     
 }
+//var countdownTimer = 10;
+//var timeLeftCountdown = document.getElementById("timeLeft");
+
+// var timeRemaining = setInterval(() => { 
+//     //var countdownTimer = 60;
+//     if (countdownTimer >= 1) {
+//         countdownTimer = countdownTimer - 1;
+//         timeLeftCountdown.textContent = countdownTimer;
+//         //console.log(countdownTimer);
+//     }
+//     else {
+//         clearInterval(timeRemaining);
+//         var endScreenEl = document.getElementById("end-quiz")
+//         var endScreenTimer = document.getElementById("final-score-timer")
+//         endScreenTimer.textContent = "Sorry, but time has run out!"
+//         endScreenEl.setAttribute("class", "show");
+//         questionsEl.setAttribute("class", "hide");
+//         var endScore = document.getElementById("final-score")
+//         endScore.textContent = scoreEl;
+//     };
+    
+
+// }, 1000)
 
 
 //need to insert function here
