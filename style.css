@@ -115,3 +115,10 @@ header h3 {
 #end-quiz p {
     color: var(--primary-color);
 }
+#inputName {
+    padding: 5px 5px 5px 5px;
+
+}
+#end-quiz button {
+    padding: 5px 5px 5px 5px;
+}

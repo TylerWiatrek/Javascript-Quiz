@@ -132,26 +132,51 @@ function getQuestions() {
     
     }
 
-    var timeRemaining = setInterval(() => { 
+    var timeRemaining = setInterval(timeCountdown, 1000);
+
+    function timeCountdown() {
         //var countdownTimer = 60;
-        if (countdownTimer >= 1) {
+        console.log(countdownTimer);
+        if (countdownTimer > 0) {
             countdownTimer = countdownTimer - 1;
             timeLeftCountdown.textContent = countdownTimer;
-            //console.log(countdownTimer);
         }
+        else if (countdownTimer = 0) {
+            clearInterval(timeRemaining);
+        }
+            
         else {
             clearInterval(timeRemaining);
             var endScreenEl = document.getElementById("end-quiz")
             var endScreenTimer = document.getElementById("final-score-timer")
-            endScreenTimer.textContent = "Sorry, but time has run out!"
+            endScreenTimer.textContent = "The time has reached 0! Your score is displayed above."
             endScreenEl.setAttribute("class", "show");
             questionsEl.setAttribute("class", "hide");
             var endScore = document.getElementById("final-score")
             endScore.textContent = scoreEl;
-        };
+        }
+    }
+
+    // var timeRemaining = setInterval(() => { 
+    //     //var countdownTimer = 60;
+    //     if (countdownTimer >= 1) {
+    //         countdownTimer = countdownTimer - 1;
+    //         timeLeftCountdown.textContent = countdownTimer;
+    //         //console.log(countdownTimer);
+    //     }
+    //     else {
+    //         clearInterval(timeRemaining);
+    //         var endScreenEl = document.getElementById("end-quiz")
+    //         var endScreenTimer = document.getElementById("final-score-timer")
+    //         endScreenTimer.textContent = "Sorry, but time has run out!"
+    //         endScreenEl.setAttribute("class", "show");
+    //         questionsEl.setAttribute("class", "hide");
+    //         var endScore = document.getElementById("final-score")
+    //         endScore.textContent = scoreEl;
+    //     };
         
     
-    }, 1000)
+    // }, 1000)
 }
 
 
@@ -164,10 +189,18 @@ function endQuiz()  {
     var endScore = document.getElementById("final-score")
     endScore.textContent = scoreEl;
     
+
+
+    
     
 
 }
 
+function finalInitials() {
+    let input = document.getElementById("inputName").value;
+    window.alert("Thanks for playing, your final score has been saved under the initials: " + input)
+    localStorage.setItem('initials', JSON.stringify(input))
+}
     //console.log(choicesButton);
     
     
