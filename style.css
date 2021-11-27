@@ -123,3 +123,19 @@ header h3 a {
 #end-quiz button {
     padding: 5px 5px 5px 5px;
 }
+
+.high-score-retake {
+    position:relative;
+    bottom: 50px;
+}
+
+
+
+.quiz-retake-score {
+    
+    position: relative;
+    font-size: 24px;
+    text-align: center;
+    top: 260px;
+    margin: 2%;
+}

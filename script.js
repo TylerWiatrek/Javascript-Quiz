@@ -181,6 +181,13 @@ function questionClick() {
     
     
 }
-
-
 startQuizButton.addEventListener("click", startQuiz);
+
+    var highScoreName = document.getElementById("high-score-name");
+    var highScoreValue = document.getElementById("high-score-value");
+    var highScoreNames = localStorage.getItem('initials');
+    var highScoreValues = localStorage.getItem('score');
+    highScoreName.textContent = highScoreNames;
+    highScoreValue.textContent = highScoreValues;
+
+
