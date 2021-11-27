@@ -38,3 +38,4 @@ The user can click on the View High Scores tab on the top left of the webpage to
 
 ## Conclusion
 The Javascript quiz provides users with a fun way to practice their Javascript knowledge.
+Please use the link below to go straight to Javascript Quiz!
