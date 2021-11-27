@@ -87,27 +87,6 @@ function startQuiz (event) {
 
 function getQuestions() {
 
-    // var timeRemaining = setInterval(() => { 
-    //     //var countdownTimer = 60;
-    //     if (countdownTimer >= 1) {
-    //         countdownTimer = countdownTimer - 1;
-    //         timeLeftCountdown.textContent = countdownTimer;
-    //         //console.log(countdownTimer);
-    //     }
-    //     else {
-    //         clearInterval(timeRemaining);
-    //         var endScreenEl = document.getElementById("end-quiz")
-    //         var endScreenTimer = document.getElementById("final-score-timer")
-    //         endScreenTimer.textContent = "Sorry, but time has run out!"
-    //         endScreenEl.setAttribute("class", "show");
-    //         questionsEl.setAttribute("class", "hide");
-    //         var endScore = document.getElementById("final-score")
-    //         endScore.textContent = scoreEl;
-    //     };
-        
-    
-    // }, 1000)
-
     var currentQuestion = questions[currentQuestionIndex];
     var titleEl = document.getElementById("questions-title");
     titleEl.textContent = currentQuestion.question;
@@ -121,21 +100,23 @@ function getQuestions() {
         choicesButton.textContent = i+1+ ": " + currentQuestion.choices[i];
         choicesEl.appendChild(choicesButton);
         choicesButton.addEventListener("click", questionClick);
+        
         if (currentQuestion.choices[i] === questions.answers) {
-            scoreEl = scoreEl + 20;
-        }
+             scoreEl = scoreEl + 20;
+         }
         else {
             scoreEl = scoreEl;
-        }
-        console.log(scoreEl);
+         }
+         
 
     
     }
 
+    
+
     var timeRemaining = setInterval(timeCountdown, 1000);
 
     function timeCountdown() {
-        //var countdownTimer = 60;
         console.log(countdownTimer);
         if (countdownTimer > 0) {
             countdownTimer = countdownTimer - 1;
@@ -156,30 +137,12 @@ function getQuestions() {
             endScore.textContent = scoreEl;
         }
     }
-
-    // var timeRemaining = setInterval(() => { 
-    //     //var countdownTimer = 60;
-    //     if (countdownTimer >= 1) {
-    //         countdownTimer = countdownTimer - 1;
-    //         timeLeftCountdown.textContent = countdownTimer;
-    //         //console.log(countdownTimer);
-    //     }
-    //     else {
-    //         clearInterval(timeRemaining);
-    //         var endScreenEl = document.getElementById("end-quiz")
-    //         var endScreenTimer = document.getElementById("final-score-timer")
-    //         endScreenTimer.textContent = "Sorry, but time has run out!"
-    //         endScreenEl.setAttribute("class", "show");
-    //         questionsEl.setAttribute("class", "hide");
-    //         var endScore = document.getElementById("final-score")
-    //         endScore.textContent = scoreEl;
-    //     };
-        
     
-    // }, 1000)
 }
 
+function checkAnswers() {
 
+}
 function endQuiz()  {
    
     
@@ -198,23 +161,11 @@ function endQuiz()  {
 
 function finalInitials() {
     let input = document.getElementById("inputName").value;
-    window.alert("Thanks for playing, your final score has been saved under the initials: " + input)
+    window.alert("Thanks for playing, your final score is " + scoreEl + ". It has been saved under the initials: " + input)
     localStorage.setItem('initials', JSON.stringify(input))
+    localStorage.setItem('score', scoreEl)
 }
-    //console.log(choicesButton);
-    
-    
-
-
-    //currentQuestion.choices.forEach(function(choices, i) {
-    // for (var i = 0;i < currentQuestion.choices.length; i++) {
-    //     var choicesButton = document.createElement("button");
-    //     choicesButton.setAttribute("class", "choicesButton");
-    //     choicesButton.setAttribute("value", currentQuestion.choices[i]);
-    //     choicesButton.textContent = i+1+": " + currentQuestion.choices[i];
-    //     choicesButton.onclick = questionClick();
-    //     choicesEl.appendChild(choicesButton);
-   // }
+   
 
 
 
@@ -230,30 +181,6 @@ function questionClick() {
     
     
 }
-//var countdownTimer = 10;
-//var timeLeftCountdown = document.getElementById("timeLeft");
-
-// var timeRemaining = setInterval(() => { 
-//     //var countdownTimer = 60;
-//     if (countdownTimer >= 1) {
-//         countdownTimer = countdownTimer - 1;
-//         timeLeftCountdown.textContent = countdownTimer;
-//         //console.log(countdownTimer);
-//     }
-//     else {
-//         clearInterval(timeRemaining);
-//         var endScreenEl = document.getElementById("end-quiz")
-//         var endScreenTimer = document.getElementById("final-score-timer")
-//         endScreenTimer.textContent = "Sorry, but time has run out!"
-//         endScreenEl.setAttribute("class", "show");
-//         questionsEl.setAttribute("class", "hide");
-//         var endScore = document.getElementById("final-score")
-//         endScore.textContent = scoreEl;
-//     };
-    
-
-// }, 1000)
 
 
-//need to insert function here
 startQuizButton.addEventListener("click", startQuiz);
