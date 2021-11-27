@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!--Establishing the head section here. This includes the name of the browser tab and a link to the css stylesheet-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
 </head>
     
 <body>
+    <!--Creating the header here to include the high scores section and time remaining-->
     <header>
         <a class="highScoreText" id="high-score-btn" href="./high-score.html">View High Scores</a>
         
@@ -16,18 +18,19 @@
     </header>
 
 
-
+    <!--Quiz intro starts here. This is what the user will see when they first visit the webpage-->
     <div class="quizIntro" id="quiz-main">
         <h1 class="quizTitle" id="quiz-title">Welcome to the Javascript Quiz Challenge!</h1>
         <p class="quizText" id="quiz-page">
             Try completing the following quiz challenge. You will be presented with a series of questions regarding Javascript.
             Please keep in mind, the quiz is timed. Answering a question wrong will subtract time. Try your best and try to beat the high score!
         </p>
+        <!--Adding a button here so that as soon as the user clicks on it, the quiz will start-->
         <div class="button">
             <button class="buttonStart" id="start-quiz" type="submit">Start Quiz</button>
         </div>
     </div>
-    
+    <!--Creating divs here for DOM manipulation later in the script.js file-->
     <div class="hide" id="questions-main">
         
         <div id="questions-title">
@@ -44,6 +47,7 @@
        <h2>
 
        </h2>
+       <!--Here is the end screen the user will see after completing the quiz. It will prompt the user to enters their initials-->
         <p>
             Your final score is <span id="final-score">               </span>!
         </p>
@@ -62,7 +66,7 @@
 
     
 
-
+    <!--linking the javascript file here-->
     <script src="./script.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+
+// Setting global variables here for use later on in the js file
 var startQuizButton = document.querySelector("#start-quiz");
 var questionsEl = document.getElementById("questions-main");
 var currentQuestionIndex = 0;
@@ -6,7 +8,8 @@ var scoreEl = document.getElementById("final-score");
 var scoreEl = 0;
 
 
-
+// Establishing a questions array here. This array will contain all the content needed for the quiz. This array includes
+// 5 questions. Each question has 4 answer choices and only 1 choice correct.
 var questions = [
     {
         question: "Which data type reads true and false values?",
@@ -70,11 +73,12 @@ var questions = [
     }
 
 ];
-
-var countdownTimer = 60;
+// Setting a global variable here for the time remaining. Giving the user 2 minutes (120 seconds) to complete the quiz.
+var countdownTimer = 120;
 var timeLeftCountdown = document.getElementById("timeLeft");
 
-
+// Starting a function here that will run when the user clicks on the start quiz button.
+// This function will hide the start screen and show the quiz screen which will start with the first questions in the array.
 function startQuiz (event) {
     event.preventDefault();
 
@@ -84,7 +88,7 @@ function startQuiz (event) {
     getQuestions();
 
 }
-
+// Starting a function here that will run through each question and each answer choice.
 function getQuestions() {
 
     var currentQuestion = questions[currentQuestionIndex];
@@ -113,9 +117,9 @@ function getQuestions() {
     }
 
     
-
+    // starting the time here with a setInterval function that will count down every 1000 milliseconds or 1 second.
     var timeRemaining = setInterval(timeCountdown, 1000);
-
+    // starting a function here that will check the time remaining to ensure the user has not run out of time.
     function timeCountdown() {
         console.log(countdownTimer);
         if (countdownTimer > 0) {
@@ -139,10 +143,7 @@ function getQuestions() {
     }
     
 }
-
-function checkAnswers() {
-
-}
+// starting a function here to display the end quiz screen. this will hide the quiz questions screen and show the end quiz screen
 function endQuiz()  {
    
     
@@ -158,7 +159,8 @@ function endQuiz()  {
     
 
 }
-
+// starting a function here to save the users information after they have completed the quiz. This will prompt the user to enter
+// their initials and it will save them in local storage.
 function finalInitials() {
     let input = document.getElementById("inputName").value;
     window.alert("Thanks for playing, your final score is " + scoreEl + ". It has been saved under the initials: " + input)
@@ -168,7 +170,7 @@ function finalInitials() {
    
 
 
-
+// starting a function here to run through each question after an answer choice is clicked.
 function questionClick() {
     currentQuestionIndex++
     if (currentQuestionIndex <= 4) {
@@ -181,8 +183,10 @@ function questionClick() {
     
     
 }
+// adding an event listener here to run the startQuiz function on click
 startQuizButton.addEventListener("click", startQuiz);
 
+    // using local storage to display the current high scores. this section of javascript refers to the the high-score.html file.
     var highScoreName = document.getElementById("high-score-name");
     var highScoreValue = document.getElementById("high-score-value");
     var highScoreNames = localStorage.getItem('initials');
